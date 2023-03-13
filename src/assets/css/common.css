@@ -1,0 +1,40 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+html,
+body,
+p,
+input,
+button {
+    margin: 0;
+    padding: 0;
+}
+
+input,
+button {
+    background: none;
+    border: none;
+    font: inherit;
+    outline: none;
+}
+button {
+    cursor: pointer;
+}
+input[type="checkbox"] {
+    display: none;
+}
+
+::placeholder {
+    color: #c1c1c1;
+}
+
+#wrap {
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    padding: 100px;
+    background: #e9ecef;
+}
