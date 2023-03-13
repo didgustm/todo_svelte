@@ -7,9 +7,7 @@
     const st = styles;
 
     let uid = 1;
-    let todos = [
-
-    ]
+    let todos = []
 
     function add(input){
         const todo = {
