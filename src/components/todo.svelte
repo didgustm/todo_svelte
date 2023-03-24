@@ -14,13 +14,6 @@
 
 <div class="{ styles.todo }">
     <Date styles={st} />
-    {#if remain > 1}
-    <p class="{ styles.remain }"><span>{remain}</span> items left</p>
-    {:else if remain == 1}
-    <p class="{ styles.remain }"><span>{remain}</span> item left</p>
-    {:else}
-    <p class="{ styles.remain }">No item</p>
-    {/if}
-    <Lists styles={st} {todos} {remove} { check } />
+    <Lists styles={st} {todos} {remove} { check } { remain } />
     <Regist styles={st} {add} />
 </div>

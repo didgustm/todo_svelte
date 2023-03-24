@@ -1,13 +1,14 @@
 <script>
     import Items from "./items.svelte";
+    import Remain from "./remain.svelte";
 
-    export let styles, todos, remove, check
+    export let styles, todos, remove, check, remain
 
     
 </script>
 
 <div class="{ styles.list }">
-    <!-- <p class="{ styles.title }">할 일 {leng}개 남음</p> -->
+    <Remain { styles } { remain } />
     <div class="{ styles.grid }">
         {#each todos as todo}
             <Items { todo } { styles } { remove } { check } />
