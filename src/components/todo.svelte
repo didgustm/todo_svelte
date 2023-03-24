@@ -4,32 +4,23 @@
     import Lists from "./lists.svelte";
     import Regist from "./regist.svelte";
 
+    export let todos, remove, add, check
+
     const st = styles;
+    $: remain = todos.filter(t => !t.done).length;
 
-    let uid = 1;
-    let todos = []
-
-    function add(input){
-        const todo = {
-            id: uid++,
-            done: false,
-            description: input.value
-        }
-        if(input.value != ''){
-            todos = [...todos, todo];
-            input.value = '';
-        } else{
-            alert('no data');
-        }
-    }
-
-    function remove(todo){
-        todos = todos.filter(t => t !== todo);
-    }
+    
 </script>
 
 <div class="{ styles.todo }">
     <Date styles={st} />
-    <Lists styles={st} todos={todos} remove={remove} />
-    <Regist styles={st} add={add} />
+    {#if remain > 1}
+    <p class="{ styles.remain }"><span>{remain}</span> items left</p>
+    {:else if remain == 1}
+    <p class="{ styles.remain }"><span>{remain}</span> item left</p>
+    {:else}
+    <p class="{ styles.remain }">No item</p>
+    {/if}
+    <Lists styles={st} {todos} {remove} { check } />
+    <Regist styles={st} {add} />
 </div>

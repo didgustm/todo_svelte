@@ -1,13 +1,12 @@
 <script>
-    export let todo, styles, remove
+    export let todo, styles, remove, check
 </script>
 
 <div class="{ styles.item }">
     <label>
         <input 
             type="checkbox"
-            bind:checked={todo.done}
-            on:change={() => todo.done = todo.done}
+            on:change={ check(todo) }
         >
         <span class="{ styles.icon }"></span>
         <p class="{ styles.subject }">{ todo.description }</p>

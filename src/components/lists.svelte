@@ -1,7 +1,7 @@
 <script>
     import Items from "./items.svelte";
 
-    export let styles, todos, remove;
+    export let styles, todos, remove, check
 
     
 </script>
@@ -10,7 +10,7 @@
     <!-- <p class="{ styles.title }">할 일 {leng}개 남음</p> -->
     <div class="{ styles.grid }">
         {#each todos as todo}
-            <Items todo={todo} styles={styles} remove={remove} />
+            <Items { todo } { styles } { remove } { check } />
         {/each}
     </div>
 </div>

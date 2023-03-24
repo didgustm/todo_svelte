@@ -29,6 +29,13 @@
     color: #20c997;
     font-weight: 700;
 }
+.remain{
+    padding:20px 20px 0;
+    text-align:right
+}
+.remain span{
+    font-weight:600
+}
 
 .item {
     display: flex;
