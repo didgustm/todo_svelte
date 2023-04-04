@@ -1,6 +1,6 @@
 .todo {
     position: relative;
-    width: 500px;
+    max-width: 500px;
     padding: 30px 0 150px;
     background: #fff;
     margin: 0 auto;
@@ -14,7 +14,8 @@
 .date {
     font-size: 30px;
     color: #232323;
-    font-weight: 600;
+    font-variation-settings:'wght' 600;
+    margin-bottom:10px
 }
 .day {
     font-size: 20px;
@@ -27,13 +28,13 @@
 .list .title {
     font-size: 18px;
     color: #20c997;
-    font-weight: 700;
+    font-variation-settings:'wght' 700;
 }
 .remain{
     text-align:right
 }
 .remain span{
-    font-weight:600
+    font-variation-settings:'wght' 600
 }
 
 .item {
@@ -43,20 +44,26 @@
     margin-top: 32px;
     font-size: 21px;
     color: #495057;
-    font-weight: 300;
+    font-variation-settings:'wght' 300;
 }
 .item label {
     display: flex;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
     cursor: pointer;
+}
+.item .subject{
+    max-width:80%;
+    word-break:break-all;
+    line-height:30px;
+    padding-top:2px
 }
 .item .icon {
     width: 34px;
     height: 34px;
     border-radius: 50%;
     border: 1px solid #ced4da;
-    background: #fff url(@images/check-mark.png) no-repeat 50% 300%;
+    background: #fff url(@images/check-mark.png) no-repeat 50% 3rem;
     margin-right: 20px;
 }
 .item button {
@@ -99,7 +106,8 @@ input:checked ~ .subject {
 }
 .regist input {
     width: 80%;
-    padding: 10px;
+    padding: 9px 10px;
+    line-height:25px;
     border: 1px solid #dee2e6;
     background: #fff;
     border-radius: 5px;
@@ -108,4 +116,65 @@ input:checked ~ .subject {
     width: 18%;
     background: #dee2e6;
     border-radius: 5px;
+}
+
+
+@media (max-width:700px) {
+    .todo {
+        max-width: 50rem;
+        padding: 3rem 0 15rem;
+        border-radius: 1rem;
+    }
+
+    .top {
+        padding: 0 2rem 3rem;
+    }
+    .date {
+        font-size: 3rem;
+        margin-bottom:1rem
+    }
+    .day {
+        font-size: 2rem
+    }
+
+    .list {
+        padding: 4rem 2rem 0;
+    }
+    .list .title {
+        font-size: 1.8rem;
+    }
+
+    .item {
+        margin-top: 3.2rem;
+        font-size: 2.1rem;
+    }
+    .item .subject{
+        line-height:3rem;
+        padding-top:0.2rem
+    }
+    .item .icon {
+        width: 3.4rem;
+        height: 3.4rem;
+        margin-right: 2rem
+    }
+    .item button {
+        width: 1.4rem;
+        height: 2rem;
+    }
+
+    .regist {
+        height: 12rem;
+        padding: 2.5rem 2rem 5rem;
+        border-radius: 0 0 1rem 1rem;
+        font-size: 1.8rem
+    }
+    .regist input {
+        padding: 0.9rem 1rem;
+        line-height:2.5rem;
+        border-radius: 0.5rem;
+    }
+    .regist button {
+        border-radius: 0.5rem
+    }
+
 }

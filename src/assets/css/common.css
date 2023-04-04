@@ -1,7 +1,22 @@
+@font-face{
+    font-family:'mont';
+    src:url(/src/assets/fonts/Montserrat-vf_wght.woff) format(woff)
+}
+@font-face{
+    font-family:'pre';
+    src:url(/src/assets/fonts/PretendardKR-VF-distilled.woff2) format(woff2)
+}
+
 *,
 *::after,
 *::before {
     box-sizing: border-box;
+}
+
+html,
+body{
+    font:400 16px/1 'mont', 'pre';
+    font-variation-settings:'wght' 400;
 }
 
 html,
@@ -37,4 +52,41 @@ input[type="checkbox"] {
     min-height: 100vh;
     padding: 100px;
     background: #e9ecef;
+}
+
+@media (max-width:700px) {
+    html{
+        font-size:10px
+    }
+    body{
+        font-size:1.6rem
+    }
+    #wrap{
+        padding:5rem;
+        padding-top:10rem
+    }
+}
+
+@media (max-width:600px) {
+    html{
+        font-size:9px
+    }
+}
+
+@media (max-width:500px) {
+    html{
+        font-size:8px
+    }
+}
+
+@media (max-width:460px) {
+    html{
+        font-size:7px
+    }
+}
+
+@media (max-width:400px) {
+    html{
+        font-size:6px
+    }
 }
