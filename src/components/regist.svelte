@@ -14,6 +14,6 @@
 >
     <div class="{ styles.regist }">
         <input type="text" name="create" id="create" placeholder="text" autocomplete="off" bind:this={input}>
-        <button type="submit">Regist</button>
+        <button type="submit">Add</button>
     </div>
 </form>

@@ -6,6 +6,7 @@
     <label>
         <input 
             type="checkbox"
+            checked="{todo.done}"
             on:change={ check(todo) }
         >
         <span class="{ styles.icon }"></span>
