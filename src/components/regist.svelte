@@ -1,7 +1,5 @@
 <script>
-    export let styles, add
-
-    let input;
+    export let styles, todoValue, handleSubmit;
 </script>
 
 <form 
@@ -9,11 +7,18 @@
     id="createForm"
     on:submit={e => {
         e.preventDefault();
-        add(input)
+        handleSubmit(e);
     }}
 >
     <div class="{ styles.regist }">
-        <input type="text" name="create" id="create" placeholder="text" autocomplete="off" bind:this={input}>
+        <input 
+            type="text"
+            name="create" 
+            id="create" 
+            placeholder="text" 
+            autocomplete="off"
+            value={$todoValue}
+        >
         <button type="submit">Add</button>
     </div>
 </form>

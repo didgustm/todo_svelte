@@ -1,5 +1,5 @@
 <script>
-    export let todo, styles, remove, check
+    export let todo, styles, handleCheck, handleRemove
 </script>
 
 <div class="{ styles.item }">
@@ -7,12 +7,10 @@
         <input 
             type="checkbox"
             checked="{todo.done}"
-            on:change={ check(todo) }
+            on:change={handleCheck(todo.id)}
         >
         <span class="{ styles.icon }"></span>
-        <p class="{ styles.subject }">{ todo.description }</p>
+        <p class="{ styles.subject }">{ todo.content }</p>
     </label>
-    <button
-        on:click={remove(todo)}
-    >remove</button>
+    <button on:click={handleRemove(todo.id)}>remove</button>
 </div>
